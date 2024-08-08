@@ -1,9 +1,14 @@
 
-
+# my_list = [1, "Hello", 3.14]
+# my_list.append(4)
+# print(my_list)
 
 from datetime import datetime
 
 
+
+greeting = "Happy Birthday"
+score_bird = "Days until the birthday"
 
 def get_upcoming_birthdays(users: list[dict]) -> list[dict]:
     today = datetime.today().date()
@@ -12,11 +17,19 @@ def get_upcoming_birthdays(users: list[dict]) -> list[dict]:
     for user in users:
         birthday = datetime.strptime(user['birthday'], '%Y.%m.%d').date()
         birt_this_year = birthday.replace(year=today.year)
-        res_bird = int((today - birt_this_year).days)
+        res_bird = int((birt_this_year - today).days)
+        
         # print((today - birt_this_year).days)
+        if today >= birt_this_year:
+            print("In the next year")    
+        if today == birt_this_year:
+            print(greeting)
+        if res_bird <= 7:
+            print("222")
         
-        
+        # print(greeting)
         print(res_bird)
+        # print(birt_this_year)
         
         # if birt_this_year < today:
         #     print(f"@@@{(today - birt_this_year).days}")
@@ -24,23 +37,31 @@ def get_upcoming_birthdays(users: list[dict]) -> list[dict]:
         #     print("Happy Birthday!!!!")
         # if birt_this_year < 7:
         #     print("()()()()")
-        
+
+
+        # if birt_this_year == today:
+        #     birth_rs.append(f"Happy Birthday-{name_user}")
+        # if birt_this_year == today:
+        #     res = (f"Happy Birthday!!! '{name_user}'")
+        #     results.append(res)
+            
         print("-----------------")
     
     
     
                 
     
-    print(birthday)
+    # print(birthday)
     
-    # return f"Список користувачів{happy_list}"
+    return f"{users}"
 
 
 users = [
-    {"name": "John Doe", "birthday": "1968.07.19"},
+    {"name": "John Doe", "birthday": "1968.07.10"},
     {"name": "Dima Ilin", "birthday": "1997.06.14"},
     {"name": "John Doe", "birthday": "1985.01.23"},
-    {"name": "Jane Smith", "birthday": "1990.07.11"}
+    {"name": "Viktoria Lopes", "birthday": "2001.07.11"},
+    {"name": "Jane Smith", "birthday": "1990.07.12"}
 ]
 
 upcoming_birthdays = get_upcoming_birthdays(users)

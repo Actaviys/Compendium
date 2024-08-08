@@ -14,7 +14,7 @@ def get_days_from_today(date_str):
     date_parameters = datetime(year=year_in, month=month_in, day=day_in).date()  #Створюємо змінну з параметрами вхідного списку
 
     now_date = datetime.today().date() #Створюємо змінну з поточною датою 
-    date_str = now_date - date_parameters     # Шукаємо різницю
+    date_str = now_date - date_parameters    # Шукаємо різницю
     
     
     return date_str  #Повертаємо значення
