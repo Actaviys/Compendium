@@ -1,3 +1,57 @@
+
+class Contacts:
+    current_id = 1
+    
+    def __init__(self):
+        self.contacts = []
+        
+    def list_contacts(self):
+        return print(self.contacts)
+    
+
+    def add_contacts(self, name, phone, email, favorite):
+        self.contacts = self.contacts
+        self.contacts.append(
+            {
+                "id": Contacts.current_id,
+                "name": name,
+                "phone": phone,
+                "email": email,
+                "favorite": favorite,
+            }
+        )
+        Contacts.current_id += 1
+        return str(self.contacts)
+
+
+        
+        # self.dict_contact = {}
+        # self.dict_contact["id"] = self.current_id
+        # self.dict_contact["name"] = name
+        # self.dict_contact["phone"] = phone
+        # self.dict_contact["email"] = email
+        # self.dict_contact["favorite"] = favorite
+        
+        # self.contacts.__init__()
+        
+    def __str__(self) -> str:
+        return self.contacts
+        
+            
+user1 = Contacts()   
+user1.add_contacts("Dima", "234234", "dima@gmail.com", True)
+
+user2 = Contacts()   
+user2.add_contacts("Wylie Pope", "3333333", "Wylie_Pope@gmail.com", True)
+
+
+# Contacts.list_contacts
+print(f"List_conact-> {Contacts().list_contacts()}")
+# print(f"User: {user2.list_contacts()}")
+
+
+
+##
 # class Contacts:
 #     current_id = 1
 
@@ -26,50 +80,60 @@
 # print(user.list_contacts())
 
 ##
-class Contacts:
-    current_id = 1
+# class Contacts:
+#     current_id = 1
     
-    def __init__(self):
-        self.contacts = []
+#     def __init__(self):
+#         self.contacts = []
         
+#     def list_contacts(self):
+#         return print(self.contacts)
+    
 
-    def list_contacts(self):
-        # self.contacts.append(111)
-        return self.contacts
-
-    def add_contacts(self, name, phone, email, favorite):
-        # self.contacts.append(
-        #     {
-        #         "id": Contacts.current_id,
-        #         "name": name,
-        #         "phone": phone,
-        #         "email": email,
-        #         "favorite": favorite,
-        #     }
-        # )
-        self.contacts.append(name)
-        Contacts.current_id += 1
-        
-        # self.dict_contact = {}
-        # self.dict_contact["id"] = self.current_id
-        # self.dict_contact["name"] = name
-        # self.dict_contact["phone"] = phone
-        # self.dict_contact["email"] = email
-        # self.dict_contact["favorite"] = favorite
+#     def add_contacts(self, name, phone, email, favorite):
+#         self.contacts = self.contacts
+#         self.contacts.append(
+#             {
+#                 "id": Contacts.current_id,
+#                 "name": name,
+#                 "phone": phone,
+#                 "email": email,
+#                 "favorite": favorite,
+#             }
+#         )
+#         Contacts.current_id += 1
+#         print(self.contacts)
+    
         
         
         
-        # self.contacts.__init__()
+#         # self.dict_contact = {}
+#         # self.dict_contact["id"] = self.current_id
+#         # self.dict_contact["name"] = name
+#         # self.dict_contact["phone"] = phone
+#         # self.dict_contact["email"] = email
+#         # self.dict_contact["favorite"] = favorite
+        
+#         # self.contacts.__init__()
+        
+#     def __str__(self) -> str:
+#         return self.contacts
         
             
-user1 = Contacts()   
-user1.add_contacts("Dima", "234234", "dima@gmail.com", True)
+# user1 = Contacts()   
+# user1.add_contacts("Dima", "234234", "dima@gmail.com", True)
 
-user2 = Contacts()   
-user2.add_contacts("Wylie Pope", "3333333", "Wylie_Pope@gmail.com", True)
+# user2 = Contacts()   
+# user2.add_contacts("Wylie Pope", "3333333", "Wylie_Pope@gmail.com", True)
 
-# Contacts.list_contacts
-print(f"List_conact-> {Contacts().list_contacts()}")
+
+# # Contacts.list_contacts
+# print(f"List_conact-> {Contacts().list_contacts()}")
+# # print(f"User: {user2.list_contacts()}")
+
+
+
+
 
 ###########################################################
 # class Animal:
